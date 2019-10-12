@@ -5,7 +5,8 @@ export const GlobalStyle = createGlobalStyle`
   ${reset};
   body{
     font-family: 'Maven Pro', sans-serif;
-    background-color: #ecf0f1;
+    background-color: #2f2f2f;
+    color: white;
   }
   a{
       color:inherit;

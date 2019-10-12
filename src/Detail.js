@@ -3,6 +3,16 @@ import { Query } from "react-apollo";
 import { MOVIE_DETAILS } from "./queries";
 import Movie from "./Movie";
 import styled from "styled-components";
+import SplitText from "react-pose-text";
+
+const charPoses = {
+  exit: { opacity: 0, y: 20 },
+  enter: {
+    opacity: 1,
+    y: 0,
+    delay: ({ charIndex }) => charIndex * 150
+  }
+};
 
 const Container = styled.div`
   display: grid;
@@ -44,7 +54,17 @@ const Detail = ({
 }) => (
   <Query query={MOVIE_DETAILS} variables={{ movieId: parseInt(movieId) }}>
     {({ loading, error, data }) => {
-      if (loading) return "loading";
+      if (loading)
+        return (
+          <SplitText
+            className="loader__text"
+            initialPose="exit"
+            pose="enter"
+            charPoses={charPoses}
+          >
+            Loading..........
+          </SplitText>
+        );
       if (error) return "error";
       return (
         <React.Fragment>
