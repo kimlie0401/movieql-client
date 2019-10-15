@@ -45,7 +45,7 @@ const Home = () => {
                 pose="enter"
                 charPoses={charPoses}
               >
-                Loading..........
+                Loading....................
               </SplitText>
             );
           if (error) return "Something Happened";

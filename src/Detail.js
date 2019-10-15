@@ -69,7 +69,7 @@ const Detail = ({
               pose="enter"
               charPoses={charPoses}
             >
-              Loading..........
+              Loading....................
             </SplitText>
           );
         if (error) return "error";
