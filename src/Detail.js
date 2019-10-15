@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Query } from "react-apollo";
 import { MOVIE_DETAILS } from "./queries";
 import Movie from "./Movie";
@@ -51,47 +51,54 @@ const Detail = ({
   match: {
     params: { movieId }
   }
-}) => (
-  <Query query={MOVIE_DETAILS} variables={{ movieId: parseInt(movieId) }}>
-    {({ loading, error, data }) => {
-      if (loading)
+}) => {
+  useEffect(() => {
+    console.log("Detail redered!");
+    return () => {
+      console.log("Detail unmounted");
+    };
+  });
+  return (
+    <Query query={MOVIE_DETAILS} variables={{ movieId: parseInt(movieId) }}>
+      {({ loading, error, data }) => {
+        if (loading)
+          return (
+            <SplitText
+              className="loader__text"
+              initialPose="exit"
+              pose="enter"
+              charPoses={charPoses}
+            >
+              Loading..........
+            </SplitText>
+          );
+        if (error) return "error";
         return (
-          <SplitText
-            className="loader__text"
-            initialPose="exit"
-            pose="enter"
-            charPoses={charPoses}
-          >
-            Loading..........
-          </SplitText>
+          <React.Fragment>
+            <Container>
+              <Image src={data.movie.medium_cover_image} />
+              <span>
+                <Title>{data.movie.title}</Title>
+                <Paragraph bold>Rating: {data.movie.rating}</Paragraph>
+                <Paragraph>{data.movie.description_intro}</Paragraph>
+              </span>
+            </Container>
+            <Title>Suggested</Title>
+            <MovieContainer>
+              {data.suggestions.map(movie => (
+                <Movie
+                  key={movie.id}
+                  id={movie.id}
+                  title={movie.title}
+                  rating={movie.rating}
+                  poster={movie.medium_cover_image}
+                />
+              ))}
+            </MovieContainer>
+          </React.Fragment>
         );
-      if (error) return "error";
-      return (
-        <React.Fragment>
-          <Container>
-            <Image src={data.movie.medium_cover_image} />
-            <span>
-              <Title>{data.movie.title}</Title>
-              <Paragraph bold>Rating: {data.movie.rating}</Paragraph>
-              <Paragraph>{data.movie.description_intro}</Paragraph>
-            </span>
-          </Container>
-          <Title>Suggested</Title>
-          <MovieContainer>
-            {data.suggestions.map(movie => (
-              <Movie
-                key={movie.id}
-                id={movie.id}
-                title={movie.title}
-                rating={movie.rating}
-                poster={movie.medium_cover_image}
-              />
-            ))}
-          </MovieContainer>
-        </React.Fragment>
-      );
-    }}
-  </Query>
-);
-
+      }}
+    </Query>
+  );
+};
 export default Detail;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Query } from "react-apollo";
 import { HOME_PAGE } from "./queries";
 import SplitText from "react-pose-text";
@@ -22,6 +22,9 @@ const charPoses = {
 };
 
 const Home = () => {
+  useEffect(() => {
+    console.log("Home Mounted!!");
+  }, []);
   return (
     <Container>
       <Query query={HOME_PAGE}>
