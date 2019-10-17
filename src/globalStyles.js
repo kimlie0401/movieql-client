@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
       color:inherit;
   }
   main {
-    width: 80%;
+
     margin: 0 auto;
     padding: 20px;
   }

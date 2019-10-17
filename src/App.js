@@ -11,8 +11,8 @@ class App extends Component {
   render() {
     return (
       <div>
+        <GlobalStyle />
         <ApolloProvider client={client}>
-          <GlobalStyle />
           <Router>
             <div
               style={{
