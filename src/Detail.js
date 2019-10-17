@@ -17,6 +17,7 @@ const charPoses = {
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 4fr;
+  grid-gap: 1.5rem;
   margin-bottom: 50px;
 `;
 
@@ -42,6 +43,7 @@ const Paragraph = styled.span`
 const MovieContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 0.7fr);
+  grid-gap: 1.5rem;
   flex-wrap: wrap;
   justify-items: center;
   margin-top: 50px;
