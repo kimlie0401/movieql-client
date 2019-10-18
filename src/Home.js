@@ -6,11 +6,14 @@ import styled from "styled-components";
 import Movie from "./Movie";
 
 const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.5rem;
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  // grid-gap: 1.5rem;
+  // flex-wrap: wrap;
+  // justify-items: center;
+  display: flex;
   flex-wrap: wrap;
-  justify-items: center;
+  justify-content: space-around;
 `;
 
 const charPoses = {

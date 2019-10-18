@@ -41,12 +41,15 @@ const Paragraph = styled.span`
 `;
 
 const MovieContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 0.7fr);
-  grid-gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-items: center;
+  // display: grid;
+  // grid-template-columns: repeat(3, 0.7fr);
+  // grid-gap: 1.5rem;
+  // flex-wrap: wrap;
+  // justify-items: center;
   margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 `;
 
 const Detail = ({
