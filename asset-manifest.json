@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/movieql-client/static/js/main.abe53dfe.chunk.js",
-    "main.js.map": "/movieql-client/static/js/main.abe53dfe.chunk.js.map",
+    "main.js": "/movieql-client/static/js/main.7337a2d7.chunk.js",
+    "main.js.map": "/movieql-client/static/js/main.7337a2d7.chunk.js.map",
     "runtime~main.js": "/movieql-client/static/js/runtime~main.7b31798a.js",
     "runtime~main.js.map": "/movieql-client/static/js/runtime~main.7b31798a.js.map",
-    "static/js/2.081c89d0.chunk.js": "/movieql-client/static/js/2.081c89d0.chunk.js",
-    "static/js/2.081c89d0.chunk.js.map": "/movieql-client/static/js/2.081c89d0.chunk.js.map",
+    "static/js/2.cf896d85.chunk.js": "/movieql-client/static/js/2.cf896d85.chunk.js",
+    "static/js/2.cf896d85.chunk.js.map": "/movieql-client/static/js/2.cf896d85.chunk.js.map",
     "index.html": "/movieql-client/index.html",
-    "precache-manifest.09b231e87795f983c0dd7f561795a14e.js": "/movieql-client/precache-manifest.09b231e87795f983c0dd7f561795a14e.js",
+    "precache-manifest.d0bcc0eabd627d58fa4351ff60e71366.js": "/movieql-client/precache-manifest.d0bcc0eabd627d58fa4351ff60e71366.js",
     "service-worker.js": "/movieql-client/service-worker.js"
   }
 }
